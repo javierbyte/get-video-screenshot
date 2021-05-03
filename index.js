@@ -5,7 +5,7 @@ function GetVideoScreenshot(videoSrc) {
     function videoScreenshotGetter(videoEl) {
       let internals = {
         videoEl,
-        videoDuration: videoEl.duration
+        videoDuration: videoEl.duration,
       };
 
       return {
@@ -15,7 +15,7 @@ function GetVideoScreenshot(videoSrc) {
               rejectGet(null, `Time "${time}" is not valid.`);
             }
 
-            internals.videoEl.onseeked = function(e) {
+            internals.videoEl.onseeked = function (e) {
               const canvas = document.createElement("canvas");
               canvas.height = internals.videoEl.videoHeight;
               canvas.width = internals.videoEl.videoWidth;
@@ -30,7 +30,7 @@ function GetVideoScreenshot(videoSrc) {
 
               resolveGet({
                 src: canvas.toDataURL(),
-                time: internals.videoEl.currentTime
+                time: internals.videoEl.currentTime,
               });
             };
 
@@ -38,15 +38,15 @@ function GetVideoScreenshot(videoSrc) {
           });
         },
         info: {
-          videoDuration: internals.videoDuration
-        }
+          videoDuration: internals.videoDuration,
+        },
       };
     }
 
-    video.onloadedmetadata = function() {
+    video.onloadedmetadata = function () {
       resolve(videoScreenshotGetter(this));
     };
-    video.onerror = function(e) {
+    video.onerror = function (e) {
       reject(e);
     };
     video.src = videoSrc;

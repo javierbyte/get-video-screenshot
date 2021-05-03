@@ -1,7 +1,7 @@
 {
   "name": "get-video-screenshot",
-  "version": "1.0.0",
-  "description": "Library to get an image src from a video. Only works in the browser.",
+  "version": "1.0.1",
+  "description": "Library to capture screnshots / thumbnails as images from a videos. Only works in the browser.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,8 @@
     "screenshot",
     "js",
     "module",
-    "thumbnail"
+    "thumbnail",
+    "frame"
   ],
   "author": "hi@javier.xyz",
   "license": "ISC"
